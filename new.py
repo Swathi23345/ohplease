@@ -1,7 +1,7 @@
 import json
 import pandas as pd
 import yaml
-with open('response.json') as json_data:
+with open('runs_json.json') as json_data:
     data_json = json.load(json_data)
 
 df=pd.DataFrame(data_json)
