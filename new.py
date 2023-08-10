@@ -19,5 +19,5 @@ for item in runyaml:
     markdown_table += f"| {item['id']} | {item['name']}  | {item['conclusion']} | {item['run_attempt']} | \n"
 
 # Write Markdown table to file
-with open("dashboard.md", "w") as md_file:
+with open("README.md", "w") as md_file:
     md_file.write(markdown_table)
