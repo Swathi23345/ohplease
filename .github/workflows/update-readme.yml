@@ -19,6 +19,6 @@ jobs:
 
     - name: Update README
       run: |
-        python update_readme.py  # Execute the Python script to update the README
+        python new.py  # Execute the Python script to update the README
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
