@@ -1,7 +1,7 @@
 import json
 
 # Load JSON data
-with open('C:\\Users\\v-rvs\\Desktop\\AML\\data.json', 'r') as json_file:
+with open("C:\\Users\\v-rvs\\Desktop\\AML\\data.json", 'r') as json_file:
     json_data = json.load(json_file)
 
 # Generate table content
