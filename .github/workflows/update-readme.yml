@@ -1,31 +1,32 @@
-name: Update README with JSON Table
+name: Update README with Python Output
+
 on:
   push:
     branches:
-      - main  # Adjust the branch name as needed
+      - main  # Adjust this to your default branch
 
 jobs:
   update_readme:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Use Node.js 16.2
-      uses: actions/setup-node@v2
-      with:
-        node-version: 16.2
-
-    - name: Checkout repository
+    - name: Checkout code
       uses: actions/checkout@v2
-      
-    - name: pip-install-pandas
-      run: pip install pandas
-    - name: pip-install-simplejson
-      run: pip install simplejson
-    - name: pip-install-pyyaml
-      run: pip install pyyaml
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x  # Specify the desired Python version
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt  # If you have any dependencies
+
+    - name: Generate Output
+      run: python new.py > output.md
 
     - name: Update README
       run: |
-        python new.py  # Execute the Python script to update the README
+        OUTPUT_CONTENT=$(cat output.md)
+        sed -i 's|<!-- OUTPUT START -->.*<!-- OUTPUT END -->|<!-- OUTPUT START -->\n'"$OUTPUT_CONTENT"'\n<!-- OUTPUT END -->|' README.md
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        OUTPUT_CONTENT: ${{ steps.generate_output.outputs.output_content }}
