@@ -21,3 +21,7 @@ for item in runyaml:
 # Write Markdown table to file
 with open("README.md", "w") as md_file:
     md_file.write(markdown_table)
+output = ""
+with open("README.md", "r") as readme_file:
+    output = readme_file.read()
+print(output)
