@@ -30,7 +30,7 @@ jobs:
 
     - name: Update README
       run: |
-        OUTPUT_CONTENT=$(cat output.txt)
+        OUTPUT_CONTENT=$(cat output.md)
         sed -i 's|<!-- OUTPUT START -->.*<!-- OUTPUT END -->|<!-- OUTPUT START -->\n'"$OUTPUT_CONTENT"'\n<!-- OUTPUT END -->|' README.md
   
       env:
