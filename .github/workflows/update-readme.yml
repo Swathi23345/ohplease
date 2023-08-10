@@ -29,13 +29,15 @@ jobs:
 
 
     - name: Update README
-      run: cat table.md >> readme.md
+      run: cat table.md >> README.md
 
 
     - name: Commit and push changes
       run: | 
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git add table.md
+          git add runs.yml
           git commit -am "Update readme with table"
           git push
 
