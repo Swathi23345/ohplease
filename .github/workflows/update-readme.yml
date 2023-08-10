@@ -2,8 +2,8 @@ name: Update README with Python Output
 
 on:
   push:
-    branches:
-      - main  # Adjust this to your default branch
+    #branches:
+      #- main  # Adjust this to your default branch
 
 jobs:
   update_readme:
