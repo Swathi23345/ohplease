@@ -24,14 +24,18 @@ jobs:
     - name: pip-install-pyyaml
       run: pip install pyyaml
     - name: Generate Output
-      run: python new.py > output.md
+      run: python new.py > table.md
    
 
 
     - name: Update README
-      run: |
-        OUTPUT_CONTENT=$(cat output.md)
-        sed -i 's|<!-- OUTPUT START -->.*<!-- OUTPUT END -->|<!-- OUTPUT START -->\n'"$OUTPUT_CONTENT"'\n<!-- OUTPUT END -->|' README.md
-  
-      env:
-        OUTPUT_CONTENT: ${{ steps.generate_output.outputs.output_content }}
+      run: cat table.md >> readme.md
+
+
+    - name: Commit and push changes
+      run: | 
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -am "Update readme with table"
+          git push
+
