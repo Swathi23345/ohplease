@@ -1,3 +1,6 @@
+<!-- OUTPUT START -->
+<!-- OUTPUT END -->
+
 # Workflow Details
 
 | workflow_runs.name                 | workflow_runs.id | workflow_runs.conclusion |
