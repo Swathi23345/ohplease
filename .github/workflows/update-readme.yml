@@ -13,6 +13,13 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: pip-install-pandas
+        run: pip install pandas
+      - name: pip-install-simplejson
+        run: pip install simplejson
+      - name: pip-install-pyyaml
+        run: pip install pyyaml
+
       - name: Run Python Script
         id: run_python
         run: |
