@@ -27,7 +27,7 @@ jobs:
       run: python update-readme.py > table.md
     - name: Update README
       run: |
-         cat table.md > test.md
+         cat table.md > README.md
          git add table.md
          git commit -am "Update readme with table"
          git push
