@@ -1,7 +1,8 @@
-# My Project
+# My Awesome Project
 
-This is the main readme content.
+Welcome to my awesome project! This is a brief introduction to what the project is about.
 
-<!-- GENERATED_CONTENT_MARKER -->
-<!-- The generated Markdown will be inserted here -->
+<!--START_SECTION:python-output-->
+<!-- This section will be replaced by the Python script output. -->
+<!--END_SECTION:python-output-->
 
