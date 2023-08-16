@@ -12,6 +12,12 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ PAT }}
+          branch: refs/pull/42/merge
+          directory: .
 
       - name: pip-install-pandas
         run: pip install pandas
