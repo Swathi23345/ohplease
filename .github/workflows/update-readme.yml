@@ -33,6 +33,8 @@ jobs:
           echo "<!--START_SECTION:python-output-->" >> README.md
           echo "$MARKDOWN_CONTENT" >> README.md
           echo "<!--END_SECTION:python-output-->" >> README.md
+          git config --global user.email "swathipriyarv23@gmail.com"
+          git config --global user.name "Swathi23345"
           # git config --local user.email "swathipriyarv23@gmail.com"
           # git config --local user.name "Swathi23345"
           git commit -am "Update README with Python output" || true
