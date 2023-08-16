@@ -26,25 +26,15 @@ for item in runyaml:
 #     output = readme_file.read()
 
 # update_readme.py
+# generate_markdown.py
 
 def generate_markdown():
-    # Replace this with your actual code to generate Markdown
-    return markdown_table
-
-def update_readme(readme_path, marker):
-    generated_markdown = generate_markdown()
-
-    with open(readme_path, "r") as readme_file:
-        readme_content = readme_file.read()
-
-    updated_readme_content = readme_content.replace(marker, generated_markdown)
-
-    with open(readme_path, "w") as readme_file:
-        readme_file.write(updated_readme_content)
+    markdown = markdown_table
+    return markdown
 
 if __name__ == "__main__":
-    readme_file_path = "https://github.com/Swathi23345/ohplease/blob/main/README.md"
-    content_marker = "<!-- GENERATED_CONTENT_MARKER -->"
-    update_readme(readme_file_path, content_marker)
+    markdown_content = generate_markdown()
+    print(markdown_content)
+
 
 
