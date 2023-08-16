@@ -12,12 +12,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ PAT }}
-          branch: refs/pull/42/merge
-          directory: .
+        
 
       - name: pip-install-pandas
         run: pip install pandas
@@ -30,7 +25,8 @@ jobs:
         id: run_python
         run: |
           python3 update-readme.py
-        
+        env:
+           PAT_TOKEN: ${{ secrets.PAT}}
 
       - name: Update README
         run: |
