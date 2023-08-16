@@ -43,7 +43,7 @@ def update_readme(readme_path, marker):
         readme_file.write(updated_readme_content)
 
 if __name__ == "__main__":
-    readme_file_path = "README.md"
+    readme_file_path = "https://github.com/Swathi23345/ohplease/blob/main/README.md"
     content_marker = "<!-- GENERATED_CONTENT_MARKER -->"
     update_readme(readme_file_path, content_marker)
 
