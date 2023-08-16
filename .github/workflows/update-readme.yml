@@ -2,8 +2,8 @@ name: Update README with Python Output
 
 on:
   workflow_dispatch:
-    #branches:
-      #- main  # Adjust this to your default branch
+    branches:
+      - main  # Adjust this to your default branch
 
 jobs:
   update_readme:
