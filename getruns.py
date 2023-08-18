@@ -19,8 +19,8 @@ class dashboard():
                     "X-GitHub-Api-Version": "2022-11-28",
                     "Accept": "application/vnd.github+json"}
         for workflow in workflows:           
-            workflow_name = workflow.name.replace(".github/workflows/","getruns.yml")
-            if workflow_name == "getruns.yml":
+            workflow_name = workflow.name.replace(".github/workflows/","")
+            if workflow_name != "getruns.yml": #needs to be the list of models which qctually needs to be shown in readme 
                 continue
             response = requests.get("https://api.github.com/repos/{}/actions/workflows/{}/runs".format(self.repo_full_name,workflow_name), headers = headers)
             
