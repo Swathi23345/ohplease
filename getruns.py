@@ -12,7 +12,8 @@ class dashboard():
         self.dict = {"workflow_id":[],"workflow_name":[],"last_runid":[],"created_at":[],"updated_at":[],"status":[],"conclusion":[], "badge":[]}
         
         self.workflow_path = ".github/workflows/"
-
+    print(self.repo_full_name)
+    print(self.github_token)
     def workflow_last_run(self):
         workflows = self.repo.get_workflows()
         headers = { "Authorization": f"Bearer {self.github_token}",
