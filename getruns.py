@@ -7,7 +7,7 @@ class dashboard():
         self.token = Auth.Token(self.github_token)
         self.auth = Github(auth=self.token)
 
-        self.repo =self.auth.get_repo("Swati23345/ohplease")
+        self.repo =self.auth.get_repo("Swathi23345/ohplease")
         self.repo_full_name = self.repo.full_name
         self.dict = {"workflow_id":[],"workflow_name":[],"last_runid":[],"created_at":[],"updated_at":[],"status":[],"conclusion":[], "badge":[]}
         
